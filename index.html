@@ -4,7 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LN0MERDMJ9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
+        gtag('config', 'G-LN0MERDMJ9');
+    </script>
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +34,7 @@
                     class="sr-only">Menu</span></button>
         </div>
         <nav>
-            <ul id="main-navigation" data-visible="false" class="main-navigation flex ff-outfit" style="--gap:3rem">
+            <ul id="main-navigation" data-visible="false" class="main-navigation flex ff-outfit">
                 <li><a href="#" class="fs-100 text-white">O meni</a></li>
                 <li><a href="#" class="fs-100 text-white">Galerija</a></li>
                 <li><a href="#" class="fs-100 text-white">Web rješenja</a></li>
@@ -37,14 +45,14 @@
     </header>
 
     <section class="hero grid-container grid-container--hero">
-        <div class="intro flow" style="--flow-space:2rem">
+        <div class="intro">
             <div>
                 <h1 class="ff-outfit fs-1000 uppercase fw-300">Tomislav</h1>
                 <h1 class="ff-outfit fs-700 fw-100">Kovačević</h1>
+                <p class="slogan ff-rubik fs-400 fw-400">Fotograf i web developer <span class="fw-600">-</span> <span class="fw-100 ">stvaram oku privlačno</span></p>
             </div>
 
-            <p class="slogan ff-rubik fs-400 fw-400">Fotograf i web developer - stvaram oku privlačno</p>
-            <div style="margin-top: 3rem; margin-bottom: 1rem;">
+            <div style="margin-top: 6rem; margin-bottom: 1rem;">
                 <a href="#" class="cta-hero fs-200 ff-outfit">
                     Započnimo projekt zajedno
                 </a>
@@ -56,40 +64,55 @@
         </picture>
     </section>
     <section class="clients">
-        <h2>Klijenti</h2>
-        <p>Cijenim povjerenje klijenata s kojim sam radio.</p>
+        <h2 class="fs-400 letter-spacing-2">Klijenti</h2>
+        <p class="fs-200 text-light">Cijenim povjerenje klijenata s kojim sam radio.</p>
 
         <div class="slider-container">
+            <div class="text-wrapper">
+                <p class="slider-text">Hvala vam.</p>
+            </div>
             <div class="slider">
                 <div class="slide">
-                    <img src="assets/partners/slamanje.png" alt="slamanje logo" />
+                    <a href="https://www.facebook.com/slamanje" target="_blank">
+                        <img src="assets/partners/slamanje.png" alt="slamanje logo" /></a>
                 </div>
                 <div class="slide">
-                    <img src="assets/partners/bure.png" alt="bure bar logo" />
+                    <a href="https://www.instagram.com/pivnica_bure_bar/" target="_blank">
+                        <img src="assets/partners/bure.png" alt="bure bar logo" />
+                    </a>
                 </div>
                 <div class="slide">
-                    <img src="assets/partners/stemgameslogo.png" aalt="stem games logo" />
+                    <a href="https://stemgames.hr/" target="_blank">
+                        <img src="assets/partners/stemgameslogo.png" aalt="stem games logo" /></a>
                 </div>
                 <div class="slide">
-                    <img src="assets/partners/ziva.png" alt="živa logo" />
+                    <a href="https://www.instagram.com/predstavaziva/" target="_blank">
+                        <img src="assets/partners/ziva.png" alt="živa logo" /></a>
                 </div>
                 <div class="slide">
-                    <img src="assets/partners/qclub.png" alt="q club logo" />
+                    <a href="https://www.instagram.com/q_club_osijek/" target="_blank">
+                        <img src="assets/partners/qclub.png" alt="q club logo" /></a>
                 </div>
                 <div class="slide">
-                    <img src="assets/partners/slamanje.png" alt="slamanje logo" />
+                    <a href="https://www.facebook.com/slamanje" target="_blank">
+                        <img src="assets/partners/slamanje.png" alt="slamanje logo" /></a>
                 </div>
                 <div class="slide">
-                    <img src="assets/partners/bure.png" alt="bure bar logo" />
+                    <a href="https://www.instagram.com/pivnica_bure_bar/" target="_blank">
+                        <img src="assets/partners/bure.png" alt="bure bar logo" />
+                    </a>
                 </div>
                 <div class="slide">
-                    <img src="assets/partners/stemgameslogo.png" alt="stem games logo" />
+                    <a href="https://stemgames.hr/" target="_blank">
+                        <img src="assets/partners/stemgameslogo.png" aalt="stem games logo" /></a>
                 </div>
                 <div class="slide">
-                    <img src="assets/partners/ziva.png" alt="živa logo" />
+                    <a href="https://www.instagram.com/predstavaziva/" target="_blank">
+                        <img src="assets/partners/ziva.png" alt="živa logo" /></a>
                 </div>
                 <div class="slide">
-                    <img src="assets/partners/qclub.png" alt="q club logo" />
+                    <a href="https://www.instagram.com/q_club_osijek/" target="_blank">
+                        <img src="assets/partners/qclub.png" alt="q club logo" /></a>
                 </div>
             </div>
         </div>
