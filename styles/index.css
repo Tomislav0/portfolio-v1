@@ -31,6 +31,13 @@
     --ff-sans-rubik: "Rubik", sans-serif;
 }
 
+@media (mix-width:35em) {
+    :root {
+        --fs-200: 0.2rem
+    }
+
+}
+
 @media (min-width: 45em) {
     :root {
         --fs-1000: clamp(3.7rem, 5vw + 1rem, 8.7rem);
@@ -75,6 +82,10 @@ blockquote,
 dl,
 dd {
     margin-block-end: 0;
+}
+
+body{
+    margin:0
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -425,7 +436,7 @@ header a {
 
 @media (max-width:45em) {
     header {
-        padding: 2rem;
+        padding: 3rem;
     }
 
     .main-navigation {
@@ -466,10 +477,6 @@ header a {
 
     .main-navigation>li:last-child {
         margin-left: unset;
-    }
-
-    .slogan {
-        width: 40ch;
     }
 
     .slider {
@@ -528,6 +535,7 @@ header a {
     margin-inline: auto;
     overflow: hidden;
     padding: 4rem 0;
+    position: relative;
 }
 
 .slider {
@@ -554,7 +562,7 @@ header a {
 }
 
 .slider-container:hover {
-    --slider-animation-play-state:paused;
+    --slider-animation-play-state: paused;
 }
 
 @keyframes scroll {
@@ -590,11 +598,11 @@ header a {
     align-items: center;
     height: 100px;
     animation: opacity-change 15s linear infinite;
-    
+
     animation-play-state: var(--slider-animation-play-state, running);
 }
 
-.text-wrapper p::before {
+/* .text-wrapper p::before {
     content: "";
     position: absolute;
     width: calc(100% + 2em);
@@ -606,7 +614,7 @@ header a {
     animation-iteration-count: infinite;
     
     animation-play-state: var(--slider-animation-play-state, running);
-}
+} */
 
 .slider-text {
     margin: 0;
