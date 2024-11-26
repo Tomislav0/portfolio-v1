@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Tomislav Kovacevic</title>
+
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <button class="mobile-nav-toggle" aria-controls="main-navigation" aria-expanded="false"><span
+                    class="sr-only">Menu</span></button>
+        </div>
+        <nav>
+            <ul id="main-navigation" data-visible="false" class="main-navigation flex ff-outfit" style="--gap:3rem">
+                <li><a href="#" class="fs-100 text-white">O meni</a></li>
+                <li><a href="#" class="fs-100 text-white">Galerija</a></li>
+                <li><a href="#" class="fs-100 text-white">Web rješenja</a></li>
+                <li><a href="#" class="contact-nav fs-100 text-dark">Kontaktiraj me</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero grid-container grid-container--hero">
+        <div class="intro flow" style="--flow-space:2rem">
+            <div>
+                <h1 class="ff-outfit fs-1000 uppercase fw-300">Tomislav</h1>
+                <h1 class="ff-outfit fs-700 fw-100">Kovačević</h1>
+            </div>
+
+            <p class="slogan ff-rubik fs-400 fw-400">Fotograf i web developer - stvaram oku privlačno</p>
+            <div style="margin-top: 3rem; margin-bottom: 1rem;">
+                <a href="#" class="cta-hero fs-200 ff-outfit">
+                    Započnimo projekt zajedno
+                </a>
+            </div>
+        </div>
+        <picture>
+            <source srcset="assets/portrait.png" type="image/webp">
+            <img src="assets/portrait.png" alt="Tomislav Kovačević">
+        </picture>
+    </section>
+    <section class="clients">
+        <h2>Klijenti</h2>
+        <p>Cijenim povjerenje klijenata s kojim sam radio.</p>
+
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide">
+                    <img src="assets/partners/slamanje.png" alt="slamanje logo" />
+                </div>
+                <div class="slide">
+                    <img src="assets/partners/bure.png" alt="bure bar logo" />
+                </div>
+                <div class="slide">
+                    <img src="assets/partners/stemgameslogo.png" aalt="stem games logo" />
+                </div>
+                <div class="slide">
+                    <img src="assets/partners/ziva.png" alt="živa logo" />
+                </div>
+                <div class="slide">
+                    <img src="assets/partners/qclub.png" alt="q club logo" />
+                </div>
+                <div class="slide">
+                    <img src="assets/partners/slamanje.png" alt="slamanje logo" />
+                </div>
+                <div class="slide">
+                    <img src="assets/partners/bure.png" alt="bure bar logo" />
+                </div>
+                <div class="slide">
+                    <img src="assets/partners/stemgameslogo.png" alt="stem games logo" />
+                </div>
+                <div class="slide">
+                    <img src="assets/partners/ziva.png" alt="živa logo" />
+                </div>
+                <div class="slide">
+                    <img src="assets/partners/qclub.png" alt="q club logo" />
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- <div class="slider-container">
+                <div class="slider">
+                    <div class="slide">Slide 1</div>
+                    <div class="slide">Slide 2</div>
+                    <div class="slide">Slide 3</div>
+                    <div class="slide">Slide 4</div>
+                </div>
+            </div> -->
+
+
+    </section>
+    <!-- <div style="margin: 20rem;">spacer</div> -->
+    <!--
+        <section class="about-me">
+            <h2>O meni</h2>
+            <p>Dostavljam rezultate iznad vaših očekivanja.</p>
+            <a href="#">Javi mi se</a>
+
+            <p>
+                Unazad 5 godina bavim se fotografijom, a strast prema fotografiji prisutna je od malena. Bavim se
+                fotografiranjem portreta, događaja, noćnog života te poslovnom fotografijom te sam uvijek nastojao
+                korisnicima dati rezultate iznad njihovih očekivanja.
+                Osim fotografiranja privlači me unaprjeđivanje poslovanja klijenata kroz kreiranje web rješenja/stranica
+                koje obuhvaća dizajniranje te pisanje programskog koda.
+            </p>
+
+            <ul>
+                <li>
+                    <p>30+</p>
+                    <p>Portretnih fotosesija</p>
+                </li>
+                <li>
+                    <p>15+</p>
+                    <p>Fotografiranih događaja</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="gallery">
+            <p>“<span>Zabilježavam</span> vaše važne <span>trenutke</span>.”</p>
+            <h2>Galerija</h2>
+            <div class="gallery-container">
+                <a href="portraits.html">
+                    <img src="assets/portraits.jpg" alt="gallery image 1">
+                </a>
+                <a href="nightlife.html">
+                    <img src="assets/nightlife.jpg" alt="gallery image 2">
+                </a>
+                <a href="concerts.html">
+                    <img src="assets/concerts.jpg" alt="gallery image 3">
+                </a>
+                <a href="business-photo.html">
+                    <img src="assets/business-photo.jpg" alt="gallery image 4">
+                </a>
+                <a href="sport.html">
+                    <img src="assets/sport.jpg" alt="gallery image 5">
+                </a>
+            </div>
+        </section>
+
+        <section class="web-solutions">
+            <h2>“Razvijam sofisticirana <span>web rješenja</span> prema vašim potrebama.”</h2>
+            <div class="web-steps">
+                <div>
+                    <h3><span>01</span> Definiranje zahtjeva</h3>
+                    <p>
+                        Zajedno prolazimo i definiramo što bi sve web stranica trebala sadržavati.
+                    </p>
+                </div>
+                <div>
+                    <h3><span>01</span> Definiranje zahtjeva</h3>
+                    <p>
+                        Zajedno prolazimo i definiramo što bi sve web stranica trebala sadržavati.
+                    </p>
+                </div>
+                <div>
+                    <h3><span>01</span> Definiranje zahtjeva</h3>
+                    <p>
+                        Zajedno prolazimo i definiramo što bi sve web stranica trebala sadržavati.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="web-examples">
+            <h2>Primjer web stranice</h2>
+            <img src="assets/web-example.png" alt="primjer web stranice">
+        </section>
+
+        <section>
+            <h2>Pretvorimo <span>ideju</span> u <span>djelo</span>.</h2>
+            <p>Obrati mi se s povjerenjem.</p>
+
+            <form action="mailto:contact@example.com" method="post">
+                <div>
+                    <div>Trebam...</div>
+                    <div>
+                        <input type="checkbox" name="service[]" value="web-site">
+                    </div>
+                    <div>
+                        <input type="checkbox" name="service[]" value="fotography">
+                    <none !important;>
+                    <div>
+                        <input type="checkbox" name="service[]" value="video">
+                    </div>
+                </div>
+
+
+                <input type="text" name="name" placeholder="Ime i prezime" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Poruka" required></textarea>
+                <button type="submit">Pošalji</button>
+            </form>
+        </section>-->
+    <!-- <footer>
+        <p>Kontaktirajte me putem dostupnih kanala.</p>
+        <div>
+            <a href="www.instagram.com">
+                <img src="assets/instagram" alt="instagram logo">
+            </a>
+            <a href="www.linkedin.com">
+                <img src="assets/linkedin" alt="linkedin logo">
+            </a>
+        </div>
+
+        <p>
+            info@tomislavkovacevic.com
+        </p>
+        <p>
+            +385 99 69 63 439        
+        </p>
+        <p>
+            <span>Lokacija</span>       
+            Hrvatska, Nova Gradiška
+        </p>
+
+        <p>
+            &copy; 2024 - Tomislav Kovačević
+        </p>
+    </footer>  -->
+
+</body>
+
+</html>
