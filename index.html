@@ -28,9 +28,9 @@
 </head>
 
 <body>
-    <header>
+    <header class="">
         <div>
-            <button class="mobile-nav-toggle" aria-controls="main-navigation" aria-expanded="false"><span
+            <button class="mobile-nav-toggle wiggle-animation" aria-controls="main-navigation" aria-expanded="false"><span
                     class="sr-only">Menu</span></button>
         </div>
         <nav>
@@ -47,28 +47,28 @@
     <section class="hero grid-container grid-container--hero">
         <div class="intro">
             <div>
-                <h1 class="ff-outfit fs-1000 uppercase fw-300">Tomislav</h1>
-                <h1 class="ff-outfit fs-700 fw-100">Kovačević</h1>
-                <p class="slogan ff-rubik fs-200 fw-400">Fotograf i web developer <span class="fw-600">-</span> <span
+                <h1 class="reveal-type ff-outfit fs-1000 uppercase fw-300 appearing-animation">Tomislav</h1>
+                <h1 class="reveal-type ff-outfit fs-700 fw-100 appearing-animation">Kovačević</h1>
+                <p class="reveal-type slogan ff-rubik fs-200 fw-400 slide-text-animation">Fotograf i web developer <span class="fw-600">-</span> <span
                         class="fw-100 ">stvaram oku privlačno</span></p>
             </div>
 
-            <div style="margin-top: 4rem; margin-bottom: 1rem;">
-                <a href="#" class="cta-hero fs-200 ff-outfit">
+            <div class="wiggle-animation" style="margin-top: 4rem; margin-bottom: 1rem;">
+                <a href="#" class="cta-hero fs-200 ff-outfit ">
                     Započnimo projekt zajedno
                 </a>
             </div>
         </div>
-        <picture>
+        <picture class="upside-animation">
             <source srcset="assets/portrait.png" type="image/webp">
             <img src="assets/portrait.png" alt="Tomislav Kovačević">
         </picture>
     </section>
-    <section class="clients">
-        <h2 class="fs-400 letter-spacing-2">Klijenti</h2>
-        <p class="fs-200 text-light">Cijenim povjerenje klijenata s kojim sam radio.</p>
+    <section class="clients upside-animation">
+        <h2 class="fs-400 letter-spacing-2 wiggle-scroll-animation">Klijenti</h2>
+        <p class="fs-200 text-light wiggle-scroll-animation">Cijenim povjerenje klijenata s kojim sam radio.</p>
 
-        <div class="slider-container">
+        <div class="slider-container wiggle-scroll-animation">
             <div class="slider-text-wrapper">
                 <p class="slider-text">Hvala vam.</p>
             </div>
@@ -121,8 +121,8 @@
     </section>
 
     <section class="about-me">
-        <div class="about-me-title">
-            <h2 class="fs-400 text-blue letter-spacing-2">O meni</h2>
+        <div class="about-me-title side-slide-animation">
+            <h2 class="fs-400 text-blue letter-spacing-2 ">O meni</h2>
             <p class="fs-700">Dostavljam rezultate iznad vaših očekivanja.</p>
             <div style="margin-top: 5rem;">
                 <a href="#" class="cta-hero fs-200 ff-outfit">
@@ -132,7 +132,7 @@
 
         </div>
         <div class="about-me-content">
-            <p class="description fs-300 fw-300 text-left">
+            <p class="description fs-300 fw-300 text-left reveal-type slide-text-animation" data-scrub="true">
                 Unazad 5 godina bavim se <b>fotografijom</b>, a strast prema fotografiji prisutna je od malena. Bavim se
                 fotografiranjem portreta, događaja, noćnog života te poslovnom fotografijom te sam uvijek nastojao
                 korisnicima dati rezultate iznad njihovih očekivanja.
@@ -140,20 +140,20 @@
                     rješenja/stranica</b>
                 koje obuhvaća dizajniranje te pisanje programskog koda.
             </p>
-            <ul class="numbered-data flex">
+            <ul class="numbered-data flex appearing-animation">
                 <li>
-                    <p class="fs-900 fw-600 ff-outfit">30 <span class="text-blue">+</span></p>
-                    <p class="ff-outfit fs-500 fw-200">Portretnih <span class="d-block">fotosessija</span></p>
+                    <p class="fs-900 fw-600 ff-outfit slide-word-animation">30 <span class="text-blue">+</span></p>
+                    <p class="ff-outfit fs-500 fw-200 slide-word-animation">Portretnih <span class="d-block">fotosessija</span></p>
                 </li>
                 <li>
-                    <p class="fs-900 fw-600 ff-outfit">15 <span class="text-blue">+</span></p>
-                    <p class="ff-outfit fs-500 fw-200">Fotografiranih <span class="d-block">događaja</span></p>
+                    <p class="fs-900 fw-600 ff-outfit slide-word-animation">15 <span class="text-blue">+</span></p>
+                    <p class="ff-outfit fs-500 fw-200 slide-word-animation">Fotografiranih <span class="d-block">događaja</span></p>
                 </li>
             </ul>
         </div>
     </section>
-    <div class="big-text">
-        <p class="fs-900 text-light ff-rubik fw-500">“<span class="text-blue">Zabilježavam</span> vaše <span
+    <div class="big-text slide-word-animation" data-scrub="true">
+        <p class="fs-900 text-light ff-rubik fw-500 reveal-type">“<span class="text-blue">Zabilježavam</span> vaše <span
                 class="break"> važne <span class="text-blue">trenutke</span>.”</span></p>
     </div>
     <section class="gallery">
@@ -176,10 +176,12 @@
                 </a>
             </div> -->
     </section>
-    <div class="big-text">
+    <div class="big-text slide-word-animation" data-scrub="true" data-opacity="0">
         <p class="fs-900 text-light ff-rubik fw-500">“Razvijam sofisticirana <span class="break"><span class="text-blue">web
                 rješenja</span> prema </span><span class="break">vašim potrebama.”</span></span></p>
     </div>
+
+    <div style="margin: 10em 0"></div>
     <!--
         <section class="web-solutions">
             <h2>“Razvijam sofisticirana <span>web rješenja</span> prema vašim potrebama.”</h2>
@@ -260,6 +262,12 @@
             &copy; 2024 - Tomislav Kovačević
         </p>
     </footer>  -->
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.umd.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
 
 </body>
 
