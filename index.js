@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     start: '-200% bottom',
                     end: 'center center',
                     scrub: true,
-                    markers: true
+                    markers: false
                 },
             })
     });
@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     start: '-200% bottom',
                     end: 'center center',
                     scrub: true,
-                    markers: true
+                    markers: false
                 },
             })
     });
