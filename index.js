@@ -21,8 +21,33 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+
+
+
+// ----------------------------------------------------------------
+
+// ANIMATIONS
+
+// ----------------------------------------------------------------
+
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger)
+
+    // let sections = gsap.utils.toArray(".panel");
+    // console.log(sections)
+    // let scrollTween = gsap.to(sections, {
+    //     xPercent: -100 * (sections.length - 1),
+    //     ease: "none", // <-- IMPORTANT!
+    //     scrollTrigger: {
+    //         trigger: ".gallery",
+    //         pin: true,
+    //         scrub: 0.1,
+    //         //snap: directionalSnap(1 / (sections.length - 1)),
+    //         // start: 'bottom',
+    //         end: "+=4000",
+    //         markers: true
+    //     }
+    // });
 
     const splitTypes = document.querySelectorAll('.falling-text-animation')
 
@@ -50,7 +75,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const splitTypesSlide = document.querySelectorAll('.slide-text-animation')
 
     splitTypesSlide.forEach((element, i) => {
-        const text = new SplitType(element, { types: 'chars' });
+        const text = new SplitType(element, { types: 'chars,words' });
         const scrub = element.dataset.scrub;
         const opacity = element.dataset.opacity;
         let smth = gsap.from(text.chars, {
@@ -61,7 +86,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 scrub: scrub,
                 markers: false
             },
-            opacity: opacity != undefined ? opacity: 0.2,
+            opacity: opacity != undefined ? opacity : 0.2,
             stagger: 0.05,
 
         })
@@ -70,8 +95,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const splitTypesWords = document.querySelectorAll('.slide-word-animation')
 
     splitTypesWords.forEach((element, i) => {
-        const text = new SplitType(element, { types: 'words' });
-        let smth = gsap.from(text.words, {
+        const text = new SplitType(element, { types: 'chars,words' });
+        let smth = gsap.from(text.chars, {
             scrollTrigger: {
                 trigger: element,
                 start: 'top 80%',
@@ -85,25 +110,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
         })
     })
 
-    gsap.fromTo('.wiggle-animation',
-        {
-            scaleY: 0,
-            y: -20,
-            transformOrigin: 'top',
-        },
-        {
-            y: 0,
-            scaleY: 1,
-            duration: 2,
-            ease: 'elastic.out(1, 0.3)',
-            scrollTrigger: {
-                trigger: '.rising-animation',
-                start: 'top 80%',
-                end: 'top 20%',
-                scrub: false,
-                markers: false
-            },
-        })
+    // gsap.fromTo('.wiggle-animation',
+    //     {
+    //         scaleY: 0,
+    //         y: -20,
+    //         transformOrigin: 'top',
+    //     },
+    //     {
+    //         y: 0,
+    //         scaleY: 1,
+    //         duration: 2,
+    //         ease: 'elastic.out(1, 0.3)',
+    //         scrollTrigger: {
+    //             trigger: '.rising-animation',
+    //             start: 'top 80%',
+    //             end: 'top 20%',
+    //             scrub: false,
+    //             markers: false
+    //         },
+    //     })
 
     gsap.fromTo('.wiggle-scroll-animation',
         {
@@ -148,42 +173,47 @@ document.addEventListener("DOMContentLoaded", (event) => {
             duration: 2,
             scrollTrigger: {
                 trigger: '.appearing-animation',
-                start: 'top 200%',
+                start: '-200% 200%',
                 end: 'top top',
                 scrub: false,
                 markers: false
             },
         })
 
-    gsap.from('.side-slide-animation',
-        {
-            x: -1000,
-            duration: 1,
-            scrollTrigger: {
-                trigger: '.side-slide-animation',
-                start: 'top bottom',
-                end: 'center center',
-                scrub: true,
-                markers: false
-            },
-        })
+    const leftslide = document.querySelectorAll('.left-slide-animation')
+
+    leftslide.forEach((element, i) => {
+
+        gsap.from(element,
+            {
+                x: -1000,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: element,
+                    start: '-200% bottom',
+                    end: 'center center',
+                    scrub: true,
+                    markers: true
+                },
+            })
+    });
 
 
+    const rightslide = document.querySelectorAll('.right-slide-animation')
 
-    // let tl = gsap.timeline({
-    //     scrollTrigger: {
-    //         trigger: '.author-name',
-    //         start: 'top center',
-    //         end: 'bottom center',
-    //         scrub: false,
-    //         markers: true
-    //     }
-    // })
-
-    // tl.to('.author-name',
-    //     {
-    //         x:800
-    //     }
-    // )
+    rightslide.forEach((element, i) => {
+        gsap.from(element,
+            {
+                x: 1000,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: element,
+                    start: '-200% bottom',
+                    end: 'center center',
+                    scrub: true,
+                    markers: true
+                },
+            })
+    });
 
 });
