@@ -746,7 +746,7 @@ textarea:not([rows]) {
 
 .big-text{
     padding-inline: clamp(1.25rem, 7vw, 10rem);
-    margin: 30rem 0;
+    margin: 40rem 0;
     text-align: center; 
 }
 

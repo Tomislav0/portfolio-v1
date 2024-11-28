@@ -180,6 +180,28 @@ document.addEventListener("DOMContentLoaded", (event) => {
             },
         })
 
+    const opacityChange = document.querySelectorAll('.opacity-animation')
+
+    opacityChange.forEach((element, i) => {
+
+        gsap.fromTo(element,
+            {
+                duration: 2,
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                scrollTrigger: {
+                    trigger: element,
+                    start: '-200% top',
+                    end: 'center center',
+                    scrub: true,
+                    markers: false,
+                },
+            })
+    });
+
+
     const leftslide = document.querySelectorAll('.left-slide-animation')
 
     leftslide.forEach((element, i) => {
