@@ -1,3 +1,9 @@
+// ----------------------------------------------------------------
+
+// HEADER HAMBURGER
+
+// ----------------------------------------------------------------
+
 const hamburgerButton = document.getElementsByClassName('mobile-nav-toggle')[0]
 const primaryNav = document.getElementById("main-navigation")
 hamburgerButton.addEventListener('click', () => {
@@ -12,6 +18,11 @@ hamburgerButton.addEventListener('click', () => {
     }
 });
 
+// ----------------------------------------------------------------
+
+// SMOOTH SCROLL
+
+// ----------------------------------------------------------------
 const lenis = new Lenis();
 
 function raf(time) {
@@ -24,30 +35,76 @@ requestAnimationFrame(raf);
 
 
 
-// ----------------------------------------------------------------
 
-// ANIMATIONS
-
-// ----------------------------------------------------------------
 
 document.addEventListener("DOMContentLoaded", (event) => {
+    // ----------------------------------------------------------------
+
+    // FORM
+
+    // ----------------------------------------------------------------
+
+    document.querySelectorAll('.js-input').forEach(input => {
+        input.addEventListener('keyup', function() {
+            if (this.value) {
+                this.classList.add('not-empty');
+            } else {
+                this.classList.remove('not-empty');
+            }
+        });
+    });
+    
+    // Select the form
+    const form = document.querySelector(".contact-form");
+  
+    // Select individual fields
+    const checkboxes = form.querySelectorAll("input[type='checkbox']");
+    const nameInput = form.querySelector("#name");
+    const emailInput = form.querySelector("#email");
+    const messageInput = form.querySelector("#message");
+  
+    // Log form elements on submit
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); // Prevent form submission for demo purposes
+  
+      // Get checked checkbox values
+      const selectedServices = Array.from(checkboxes)
+        .filter((checkbox) => checkbox.checked)
+        .map((checkbox) => checkbox.value);
+  
+      // Log form values
+      console.log("Name:", nameInput.value);
+      console.log("Email:", emailInput.value);
+      console.log("Message:", messageInput.value);
+      console.log("Selected Services:", selectedServices);
+      alert("Hvala "+ nameInput.value + ", poruka je zaprimljena!");
+    });
+
+    const lazyImages = document.querySelectorAll("img[data-src]");
+  
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.removeAttribute("data-src");
+          observer.unobserve(img);
+        }
+      });
+    });
+  
+    lazyImages.forEach(image => {
+      imageObserver.observe(image);
+    });
+
+    // ----------------------------------------------------------------
+
+    // ANIMATIONS
+
+    // ----------------------------------------------------------------
+
     gsap.registerPlugin(ScrollTrigger)
 
-    // let sections = gsap.utils.toArray(".panel");
-    // console.log(sections)
-    // let scrollTween = gsap.to(sections, {
-    //     xPercent: -100 * (sections.length - 1),
-    //     ease: "none", // <-- IMPORTANT!
-    //     scrollTrigger: {
-    //         trigger: ".gallery",
-    //         pin: true,
-    //         scrub: 0.1,
-    //         //snap: directionalSnap(1 / (sections.length - 1)),
-    //         // start: 'bottom',
-    //         end: "+=4000",
-    //         markers: true
-    //     }
-    // });
 
     const splitTypes = document.querySelectorAll('.falling-text-animation')
 
@@ -81,8 +138,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         let smth = gsap.from(text.chars, {
             scrollTrigger: {
                 trigger: element,
-                start: 'top 80%',
-                end: 'top 20%',
+                start: 'top bottom',
+                end: 'center 20%',
                 scrub: scrub,
                 markers: false
             },
@@ -99,10 +156,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
         let smth = gsap.from(text.chars, {
             scrollTrigger: {
                 trigger: element,
-                start: 'top 80%',
-                end: 'top 20%',
+                start: 'top bottom',
+                end: 'center center',
                 scrub: true,
-                markers: false
+                markers: false,
             },
             opacity: 0,
             stagger: 0.05,
@@ -110,40 +167,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
         })
     })
 
-    // gsap.fromTo('.wiggle-animation',
-    //     {
-    //         scaleY: 0,
-    //         y: -20,
-    //         transformOrigin: 'top',
-    //     },
-    //     {
-    //         y: 0,
-    //         scaleY: 1,
-    //         duration: 2,
-    //         ease: 'elastic.out(1, 0.3)',
-    //         scrollTrigger: {
-    //             trigger: '.rising-animation',
-    //             start: 'top 80%',
-    //             end: 'top 20%',
-    //             scrub: false,
-    //             markers: false
-    //         },
-    //     })
-
     gsap.fromTo('.wiggle-scroll-animation',
         {
             duration: 2,
             opacity: 0,
         },
         {
-
             opacity: 1,
             y: 0,
             scaleY: 1,
             scrollTrigger: {
                 trigger: '.wiggle-scroll-animation',
-                start: 'top 120%',
-                end: 'bottom 50%',
+                start: 'top center',
+                end: 'bottom bottom',
                 scrub: true,
                 markers: false
             },
@@ -158,7 +194,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             scrollTrigger: {
                 trigger: '.upside-animation',
                 start: 'top 200%',
-                end: 'top top',
+                end: 'center top',
                 scrub: false,
                 markers: false
             },
@@ -176,7 +212,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 start: '-200% 200%',
                 end: 'top top',
                 scrub: false,
-                markers: false
+                markers: false,
             },
         })
 
