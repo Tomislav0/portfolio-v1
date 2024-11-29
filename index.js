@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       console.log("Email:", emailInput.value);
       console.log("Message:", messageInput.value);
       console.log("Selected Services:", selectedServices);
-      alert("Hvala "+ nameInput.value + ", poruka je zaprimljena!");
+      alert("Hej! Ova funkcionalnost još ne radi molim te javi mi se direktno na email.");
     });
 
     const lazyImages = document.querySelectorAll("img[data-src]");
