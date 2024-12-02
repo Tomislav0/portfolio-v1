@@ -467,6 +467,10 @@ textarea:not([rows]) {
         padding: 3rem;
     }
 
+    .mf-cursor {
+        display: none !important;
+    }
+
     .main-navigation {
         --gap: 1rem;
 
