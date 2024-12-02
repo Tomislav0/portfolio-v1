@@ -468,9 +468,13 @@ textarea:not([rows]) {
     }
 
     .main-navigation {
+        --gap: 1rem;
+
         position: fixed;
         inset: 0 0 0 30%;
         z-index: 1000;
+        align-items: unset;
+         height: 100vh;
         padding: min(20rem, 15vh) 2rem;
         margin: 0;
         background-color: hsl(var(--clr-dark)/90%);
@@ -486,7 +490,7 @@ textarea:not([rows]) {
     }
 
     .mobile-nav-toggle {
-        position: absolute;
+        position: fixed ;
         top: 2rem;
         right: 1.5rem;
         z-index: 2000;
