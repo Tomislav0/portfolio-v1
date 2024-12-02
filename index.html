@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hr">
 
 <head>
     <meta charset="UTF-8">
@@ -20,14 +20,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
     <link rel="stylesheet" href="styles/index.css">
-    <title>Tomislav Kovacevic</title>
-
+    <title>Tomislav Kovačević - Fotograf i razvojni inženjer</title>
+    <meta name="description"
+        content="Iskusni fotograf i web developer iz Nove Gradiške, specijaliziran za stvaranje vizualno impresivnih projekata. Obratite se za suradnju!">
     <script src="index.js" defer></script>
 </head>
 
 <body>
+    <a href="#intro" class="scroll-up"></a>
     <header class="">
         <div>
             <button class="mobile-nav-toggle wiggle-animation" aria-controls="main-navigation"
@@ -35,20 +37,24 @@
         </div>
         <nav>
             <ul id="main-navigation" data-visible="false" class="main-navigation flex ff-outfit">
-                <li><a href="#" class="fs-100 text-white">O meni</a></li>
-                <li><a href="#" class="fs-100 text-white">Galerija</a></li>
-                <li><a href="#" class="fs-100 text-white">Web rješenja</a></li>
-                <li><a href="#contact" class="contact-nav fs-100 text-dark">Kontaktiraj me</a>
+                <li aria-selected="true"><a href="#intro" class="fs-100 text-white">Početna</a></li>
+                <li aria-selected="false"><a href="#about-me" class="fs-100 text-white">O meni</a></li>
+                <li aria-selected="false"><a href="#gallery" class="fs-100 text-white">Galerija</a></li>
+                <li aria-selected="false"><a href="#web-solutions" class="fs-100 text-white">Web rješenja</a></li>
+                <li aria-selected="false"><a href="#contact" class="contact-nav fs-100 text-dark">Kontaktiraj me</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero grid-container grid-container--hero">
+    <section id="intro" class="hero grid-container grid-container--hero">
         <div class="intro">
             <div>
-                <h1 class="reveal-type ff-outfit fs-1000 uppercase fw-300 appearing-animation">Tomislav</h1>
-                <h1 class="reveal-type ff-outfit fs-700 fw-100 appearing-animation">Kovačević</h1>
+                <h1 class="reveal-type ff-outfit fs-1000 fw-300 appearing-animation"><span class="uppercase">
+                        Tomislav
+                    </span> <span class="d-block fs-700 fw-100">
+                        Kovačević
+                    </span></h1>
                 <p class="reveal-type slogan ff-rubik fs-200 fw-400 slide-text-animation">Fotograf i web developer <span
                         class="fw-600">-</span> <span class="fw-100 ">stvaram oku privlačno</span></p>
             </div>
@@ -75,52 +81,52 @@
             <div class="slider">
                 <div class="slide">
                     <a href="https://www.facebook.com/slamanje" target="_blank">
-                        <img src="assets/partners/slamanje.png" alt="slamanje logo" /></a>
+                        <img src="assets/partners/slamanje.png" alt="Slamanje, poslovni partner" /></a>
                 </div>
                 <div class="slide">
                     <a href="https://www.instagram.com/pivnica_bure_bar/" target="_blank">
-                        <img src="assets/partners/bure.png" alt="bure bar logo" />
+                        <img src="assets/partners/bure.png" alt="Bure bar, poslovni partner" />
                     </a>
                 </div>
                 <div class="slide">
                     <a href="https://stemgames.hr/" target="_blank">
-                        <img src="assets/partners/stemgameslogo.png" aalt="stem games logo" /></a>
+                        <img src="assets/partners/stemgameslogo.png" alt="Stem Games, poslovni partner" /></a>
                 </div>
                 <div class="slide">
                     <a href="https://www.instagram.com/predstavaziva/" target="_blank">
-                        <img src="assets/partners/ziva.png" alt="živa logo" /></a>
+                        <img src="assets/partners/ziva.png" alt="Živa, poslovni partner" /></a>
                 </div>
                 <div class="slide">
                     <a href="https://www.instagram.com/q_club_osijek/" target="_blank">
-                        <img src="assets/partners/qclub.png" alt="q club logo" /></a>
+                        <img src="assets/partners/qclub.png" alt="Q club, poslovni partner" /></a>
                 </div>
                 <div class="slide">
                     <a href="https://www.facebook.com/slamanje" target="_blank">
-                        <img src="assets/partners/slamanje.png" alt="slamanje logo" /></a>
+                        <img src="assets/partners/slamanje.png" alt="" /></a>
                 </div>
                 <div class="slide">
                     <a href="https://www.instagram.com/pivnica_bure_bar/" target="_blank">
-                        <img src="assets/partners/bure.png" alt="bure bar logo" />
+                        <img src="assets/partners/bure.png" alt="" />
                     </a>
                 </div>
                 <div class="slide">
                     <a href="https://stemgames.hr/" target="_blank">
-                        <img src="assets/partners/stemgameslogo.png" aalt="stem games logo" /></a>
+                        <img src="assets/partners/stemgameslogo.png" alt="" /></a>
                 </div>
                 <div class="slide">
                     <a href="https://www.instagram.com/predstavaziva/" target="_blank">
-                        <img src="assets/partners/ziva.png" alt="živa logo" /></a>
+                        <img src="assets/partners/ziva.png" alt="" /></a>
                 </div>
                 <div class="slide">
                     <a href="https://www.instagram.com/q_club_osijek/" target="_blank">
-                        <img src="assets/partners/qclub.png" alt="q club logo" /></a>
+                        <img src="assets/partners/qclub.png" alt="" /></a>
                 </div>
             </div>
         </div>
         </div>
     </section>
 
-    <section class="about-me">
+    <section id="about-me" class="about-me">
         <div class="about-me-title left-slide-animation">
             <h2 class="fs-400 text-blue letter-spacing-2 ">O meni</h2>
             <p class="fs-700">Dostavljam rezultate iznad Vaših očekivanja.</p>
@@ -133,176 +139,199 @@
         </div>
         <div class="about-me-content">
             <p class="description fs-300 fw-300 text-left reveal-type slide-text-animation" data-scrub="true">
-                Unazad 5 godina bavim se <b>fotografijom</b>, a strast prema fotografiji prisutna je od malena. Bavim se
-                fotografiranjem portreta, događaja, noćnog života te poslovnom fotografijom te sam uvijek nastojao
-                korisnicima dati rezultate iznad njihovih očekivanja.
-                Osim fotografiranja privlači me unaprjeđivanje poslovanja klijenata kroz kreiranje <b>web
-                    rješenja/stranica</b>
-                koje obuhvaća dizajniranje te pisanje programskog koda.
+                Unazad 5 godina bavim se <b>fotografijom</b>, a strast prema fotografiji prisutna je od malena.
+
+                <span class="d-block">
+                    Specijaliziram se za fotografiranje portreta, događaja, noćnog života te poslovnu fotografiju, s
+                    ciljem da korisnicima pružim rezultate koji nadmašuju njihova očekivanja.
+                </span>
+                <span class="d-block">
+                    Osim fotografiranja, moj interes leži u unaprjeđenju poslovanja klijenata kroz razvoj <b>web
+                        rješenja i stranica</b>, uključujući dizajn i pisanje programskog koda.</span>
             </p>
             <ul class="numbered-data flex appearing-animation">
                 <li>
-                    <p class="fs-900 fw-600 ff-outfit slide-word-animation">30 <span class="text-blue">+</span></p>
-                    <p class="ff-outfit fs-500 fw-200 slide-word-animation">Portretnih <span
+                    <p class="fs-900 fw-600 ff-outfit slide-text-animation">30 <span class="text-blue">+</span></p>
+                    <p class="ff-outfit fs-500 fw-200 slide-text-animation">Portretnih <span
                             class="d-block">fotosessija</span></p>
                 </li>
                 <li>
-                    <p class="fs-900 fw-600 ff-outfit slide-word-animation">15 <span class="text-blue">+</span></p>
-                    <p class="ff-outfit fs-500 fw-200 slide-word-animation">Fotografiranih <span
+                    <p class="fs-900 fw-600 ff-outfit slide-text-animation">15 <span class="text-blue">+</span></p>
+                    <p class="ff-outfit fs-500 fw-200 slide-text-animation">Fotografiranih <span
                             class="d-block">događaja</span></p>
                 </li>
             </ul>
         </div>
     </section>
     <div class="big-text slide-word-animation letter-spacing-2" data-scrub="true">
-        <p class="fs-900 text-light ff-rubik fw-500 reveal-type">“<span class="text-yellow">Zabilježavam</span> vaše <span
-                class="break"> važne <span class="text-yellow">trenutke</span>.”</span></p>
+        <p class="fs-900 text-light ff-rubik fw-500 reveal-type"><span class="text-yellow">Zabilježavam</span> vaše
+            <span class="break"> važne <span class="text-yellow">trenutke</span>.</span>
+        </p>
     </div>
-    <section class="gallery">
-        <div class="category left-slide-animation">
-            <p class="uppercase fw-100 letter-spacing-3 ">Portreti<span class="text-yellow">.</span></p>
-            <a href="portraits.html">
-                <img src="assets/g-portraits.jpg" alt="gallery image 1" class="lazy">
-            </a>
+    <section id="gallery">
+        <div class="flex justify-center">
+            <h2 class="text-center fs-500 fw-100 letter-spacing-2">Galerije fotografija</h2>
         </div>
+        <div class="gallery">
+            <div class="category left-slide-animation">
+                <p class="uppercase fw-100 letter-spacing-3">Portreti<span class="text-yellow">.</span></p>
+                <a href="portraits.html">
+                    <img src="assets/g-portraits.jpg" alt="Galerija Portreta" class="lazy">
+                </a>
+            </div>
 
-        <div class="category right-slide-animation">
-            <p class="uppercase fw-100 letter-spacing-3 ">Svečanosti<span class="text-yellow">.</span></p>
-            <a href="svecansoti.html">
-                <img src="assets/g-svecanosti.jpg" alt="gallery image 5" class="lazy">
-            </a>
-        </div>
-        <div class="category left-slide-animation">
-            <p class="uppercase fw-100 letter-spacing-3 ">Koncerti<span class="text-yellow">.</span></p>
-            <a href="concerts.html">
-                <img src="assets/g-concerts.jpg" alt="gallery image 3" class="lazy">
-            </a>
-        </div>
-        <div class="category right-slide-animation">
-            <p class="uppercase fw-100 letter-spacing-3 ">Poslovna<span class="text-yellow">.</span></p>
-            <a href="business-photo.html">
-                <img src="assets/g-business.jpg" alt="gallery image 4" class="lazy">
-            </a>
-        </div>
-        <div class="category left-slide-animation">
-            <p class="uppercase fw-100 letter-spacing-3 ">Sport<span class="text-yellow">.</span></p>
-            <a href="sport.html">
-                <img src="assets/g-sport.jpg" alt="gallery image 5" class="lazy">
-            </a>
-        </div>
-        <div class="category right-slide-animation">
-            <p class="uppercase fw-100 letter-spacing-3 ">Noćna<span class="text-yellow">.</span></p>
-            <a href="nightlife.html">
-                <img src="assets/g-nightlife.jpg" alt="gallery image 2" class="lazy">
-            </a>
-        </div>
+            <div class="category right-slide-animation">
+                <p class="uppercase fw-100 letter-spacing-3">Svečanosti<span class="text-yellow">.</span></p>
+                <a href="svecansoti.html">
+                    <img src="assets/g-svecanosti.jpg" alt="Galerija fotografija Svečanosti" class="lazy">
+                </a>
+            </div>
+            <div class="category left-slide-animation">
+                <p class="uppercase fw-100 letter-spacing-3">Koncerti<span class="text-yellow">.</span></p>
+                <a href="concerts.html">
+                    <img src="assets/g-concerts.jpg" alt="Galerija fotografija Koncerata" class="lazy">
+                </a>
+            </div>
+            <div class="category right-slide-animation">
+                <p class="uppercase fw-100 letter-spacing-3">Poslovna<span class="text-yellow">.</span></p>
+                <a href="business-photo.html">
+                    <img src="assets/g-business.jpg" alt="Galerija Poslovne fotografije" class="lazy">
+                </a>
+            </div>
+            <div class="category left-slide-animation">
+                <p class="uppercase fw-100 letter-spacing-3">Sport<span class="text-yellow">.</span></p>
+                <a href="sport.html">
+                    <img src="assets/g-sport.jpg" alt="Galerija Sportske fotografije" class="lazy">
+                </a>
+            </div>
+            <div class="category right-slide-animation">
+                <p class="uppercase fw-100 letter-spacing-3">Noćna<span class="text-yellow">.</span></p>
+                <a href="nightlife.html">
+                    <img src="assets/g-nightlife.jpg" alt="Galerija Noćne fotografije" class="lazy">
+                </a>
+            </div>
 
+        </div>
     </section>
 
     <div class="big-text slide-word-animation" data-scrub="true" data-opacity="0">
-        <p class="fs-900 text-light ff-rubik fw-500 letter-spacing-2">“Razvijam sofisticirana <span class="break"><span
+        <p class="fs-900 text-light ff-rubik fw-500 letter-spacing-2">Razvijam sofisticirana <span class="break"><span
                     class="text-blue">web
-                    rješenja</span> prema </span><span class="break">vašim potrebama.”</span></span></p>
+                    rješenja</span> prema </span><span class="break">vašim potrebama.</span></span></p>
     </div>
 
-    <section class="web-solutions">
-        <div class="left-slide-animation">
-            <div class="web-steps">
-                <div class="step-title flex">
-                    <span class="text-blue fs-900 fw-100 letter-spacing-2">01</span>
-                    <h3 class="fs-700 uppercase fw-100 line letter-spacing-2">Kratki<span
-                            class="d-block">sastanak</span>
-                    </h3>
+
+    <section id="web-solutions">
+        <div class="web-solutions" role="list">
+            <div class="flex justify-center">
+                <h2 class="text-center fs-500 fw-100 letter-spacing-2">Koraci do unaprjeđenja vašeg poslovanja - <b>web
+                        rješenje/stranica</b></h2>
+            </div>
+            <div class="left-slide-animation" role="listitem">
+                <div class="web-steps">
+                    <div class="step-title flex">
+                        <span class="text-blue fs-900 fw-100 letter-spacing-2" aria-hidden="true">01</span>
+                        <h3 class="fs-700 uppercase fw-100 line letter-spacing-2"><span class="sr-only">Prvi korak -
+                            </span>Kratki<span class="d-block">sastanak</span>
+                        </h3>
+                    </div>
+                    <p class="fs-200 fw-100 text-light">
+                        Besplatni kratki sastanak gdje utvrđujemo što je vama <b>potrebno</b> i kako vam ja mogu
+                        <b>pomoći</b>.
+                    </p>
                 </div>
-                <p class="fs-200 fw-100 text-light">
-                    Besplatni kratki sastanak gdje utvrđujemo što je vama <b>potrebno</b> i kako vam ja mogu
-                    <b>pomoći</b>.
-                </p>
+
+            </div>
+            <div class="right-slide-animation" role="listitem">
+                <div class="web-steps">
+                    <div class="step-title flex">
+                        <span class="text-blue fs-900 fw-100 letter-spacing-2" aria-hidden="true">02</span>
+                        <h3 class="fs-700 uppercase fw-100 line letter-spacing-2"><span class="sr-only">Drugi korak -
+                            </span> Definiranje<span class="d-block">zahtjeva</span></h3>
+                    </div>
+                    <p class="fs-200 fw-100 text-light">
+                        Kada ustanovimo da imam <b>uslugu za Vas</b>, zajedno prolazimo i definiramo što bi sve <b>web
+                            rješenje/stranica</b>
+                        trebala sadržavati. Diskutiramo o Vašim
+                        klijentima, postojećim dizajnovima, mogućim unaprjeđenjima...
+                    </p>
+                </div>
             </div>
 
-        </div>
-        <div class="right-slide-animation">
-            <div class="web-steps">
-                <div class="step-title flex">
-                    <span class="text-blue fs-900 fw-100 letter-spacing-2">02</span>
-                    <h3 class="fs-700 uppercase fw-100 line letter-spacing-2">Definiranje<span
-                            class="d-block">zahtjeva</span></h3>
+            <div class="left-slide-animation" role="listitem">
+                <div class="web-steps ">
+                    <div class="step-title flex">
+                        <span class="text-blue fs-900 fw-100 letter-spacing-2" aria-hidden="true">03</span>
+                        <h3 class="fs-700 uppercase fw-100 line letter-spacing-2"><span class="sr-only">Treći korak -
+                            </span> Kreiranje <span class="d-block">prototipa</span></h3>
+                    </div>
+                    <p class="fs-200 fw-100 text-light">
+                        Kreiram prototip koji predstavlja “skicu” iz koje se može vidjeti <b>dizajn</b> web
+                        rješenja/stranice.
+                    </p>
                 </div>
-                <p class="fs-200 fw-100 text-light">
-                    Kada ustanovimo da imam uslugu za Vas, zajedno prolazimo i definiramo što bi sve web
-                    rješenje/stranica
-                    trebala sadržavati. Diskutiramo o Vašim
-                    klijentima, postojećim dizajnovima, mogućim unaprjeđenjima...
-                </p>
             </div>
-        </div>
 
-        <div class="left-slide-animation">
-            <div class="web-steps ">
-                <div class="step-title flex">
-                    <span class="text-blue fs-900 fw-100 letter-spacing-2">03</span>
-                    <h3 class="fs-700 uppercase fw-100 line letter-spacing-2">Kreiranje <span
-                            class="d-block">prototipa</span></h3>
+            <div class="right-slide-animation" role="listitem">
+                <div class="web-steps">
+                    <div class="step-title flex">
+                        <span class="text-blue fs-900 fw-100 letter-spacing-2" aria-hidden="true">04</span>
+                        <h3 class="fs-700 uppercase fw-100 line letter-spacing-2"><span class="sr-only">Četvrti korak -
+                            </span> Razvoj <span class="d-block">web
+                                rješenja</span></h3>
+                    </div>
+                    <p class="fs-200 fw-100 text-light">
+                        <b>Razvoj</b> web rješenja/stranice slijedi nakon što utvrdimo da dizajn i sadržaj odgovara
+                        potrebama
+                        klijenta.
+                    </p>
                 </div>
-                <p class="fs-200 fw-100 text-light">
-                    Kreiram prototip koji predstavlja “skicu” iz koje se može vidjeti dizajn web rješenja/stranice.
-                </p>
+            </div>
+            <div class="left-slide-animation" role="listitem">
+                <div class="web-steps ">
+                    <div class="step-title flex">
+                        <span class="text-blue fs-900 fw-100 letter-spacing-2" aria-hidden="true">05</span>
+                        <h3 class="fs-700 uppercase fw-100 line letter-spacing-2"><span class="sr-only">Peti korak -
+                            </span>
+                            Isporuka i <span class="d-block">održavanje</span></h3>
+                    </div>
+                    <p class="fs-200 fw-100 text-light">
+                        Kad se utvrdi da je web rješenje/stranca razvijeno u skladu s Vašim potrebama i zahtjevima
+                        odrađuje
+                        <i>deploy</i> na web server. Ovisno o projektu web rješenje/stranca se <b>održava</b> prema
+                        dogovoru.
+                    </p>
+                </div>
             </div>
         </div>
-
-        <div class=" right-slide-animation">
-            <div class="web-steps">
-                <div class="step-title flex">
-                    <span class="text-blue fs-900 fw-100 letter-spacing-2">04</span>
-                    <h3 class="fs-700 uppercase fw-100 line letter-spacing-2">Razvoj <span class="d-block">web
-                            rješenja</span></h3>
-                </div>
-                <p class="fs-200 fw-100 text-light">
-                    Razvoj web rješenja/stranice slijedi nakon što utvrdimo da dizajn i sadržaj odgovara potrebama
-                    klijenta.
-                </p>
-            </div>
-        </div>
-        <div class="left-slide-animation">
-            <div class="web-steps ">
-                <div class="step-title flex">
-                    <span class="text-blue fs-900 fw-100 letter-spacing-2">05</span>
-                    <h3 class="fs-700 uppercase fw-100 line letter-spacing-2">Isporuka i <span
-                            class="d-block">održavanje</span></h3>
-                </div>
-                <p class="fs-200 fw-100 text-light">
-                    Kad se utvrdi da je web rješenje razvijeno u skladu s Vašim potrebama i zahtjevima odrađuje
-                    <i>deploy</i> na web server. Ovisno o projektu stranica se održava prema dogovoru.
-                </p>
-            </div>
-        </div>
-
     </section>
     <div class="opacity-animation">
         <div class="web-example-title">
-            <h2 class="text-center fs-600 fw-100 letter-spacing-3">Primjer web stranice</h2>
+            <h2 class="text-center fs-500 fw-100 letter-spacing-2">Primjer web stranice</h2>
         </div>
         <section class="web-examples">
             <span class="fs-600 fw-100">Uskoro više.</span>
             <div class="example">
-                <img src="assets/web-example.png" alt="primjer web stranice">
-                <img src="assets/web-example1.png" alt="primjer web stranice">
-                <img src="assets/web-example2.png" alt="primjer web stranice">
-                <img src="assets/web-example3.png" alt="primjer web stranice">
+                <img src="assets/web-example.png"
+                    alt="Web stranca za uspješn o provedeni projekt besplatne fotografije">
+                <img src="assets/web-example1.png" alt="Web stranca za prikaz fotografija - Urban">
+                <img src="assets/web-example2.png" alt="Web stranca za prikaz fotografija - Zooster">
+                <img src="assets/web-example3.png" alt="Web aplikacija - adminstracija korisnika">
             </div>
         </section>
     </div>
-    
+
     <div class="big-text slide-word-animation" data-scrub="true" data-opacity="0">
-        <p class="fs-800 text-light ff-rubik fw-400 letter-spacing-2">Pretvorimo <span
-                class="text-blue">ideju</span> u <span class="text-yellow">djelo</span>.</p>
+        <p class="fs-800 text-light ff-rubik fw-400 letter-spacing-2">Pretvorimo <span class="text-blue">ideju</span> u
+            <span class="text-yellow">djelo</span>.
+        </p>
     </div>
     <section id="contact" class="contact ">
         <div class="contact-title">
-            <h3 class="text-center fw-100">Obrati mi se s povjerenjem.</h3>
+            <h3 class="text-center fs-500 fw-100 letter-spacing-3">Obrati mi se s povjerenjem.</h3>
         </div>
         <div class="need-text">
-            <span class="fs-700 fw-100 ff-outfit">Trebam....</span>
+            <span class="fs-300 fw-100 ff-outfit">Odaberi uslugu:</span>
         </div>
         <form class="contact-form ff-outfit flow">
             <div class="checkbox-grid">
@@ -356,12 +385,12 @@
             <p class="fs-100 ff-outfit" style="margin-bottom:1rem">Tomislav Kovačević bavi se <b>fotografijom</b> unazad
                 5 godina, ponajviše portretnom fotografijom. Magistrirao je <b>računarstvo</b> na Fakultetu
                 elektrotehnike, računarstva i informacijskih tehnologija u Osijeku te stečena znanja uspješno
-                primjenjuje u praksi. Nastoji raditi s entzijastičnim ljudima sa stavom i vizijom. </p>
+                primjenjuje u praksi. Nastoji raditi s entuzijastičnim ljudima sa stavom i vizijom. </p>
             <div class="social">
                 <a href="https://www.instagram.com/fotomi__/" target="_blank" class="link"><img
-                        src="assets/icons/instagram.png" alt="" /></a>
+                        src="assets/icons/instagram.png" alt="Instagram" /></a>
                 <a href="https://www.linkedin.com/in/tomislav-kova%C4%8Devi%C4%87-51a92a29b/" target="_blank"
-                    class="link"><img src="assets/icons/linkedin.png" alt="" /></a>
+                    class="link"><img src="assets/icons/linkedin.png" alt="LinkedIn" /></a>
             </div>
             <p class="copy" style="color: #818181; font-size: smaller"> 2024 &copy; Sva prava pridržana</p>
         </div>
@@ -380,6 +409,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
 
 </body>

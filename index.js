@@ -23,29 +23,82 @@ hamburgerButton.addEventListener('click', () => {
 // SMOOTH SCROLL
 
 // ----------------------------------------------------------------
-const lenis = new Lenis();
-
-function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-}
-
-requestAnimationFrame(raf);
-
-
 
 
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    // ----------------------------------------------------------------
+    const cursor = new MouseFollower({
+        stateDetection: false,
+        dataAttr: false
+    });
+    
+    const lenis = new Lenis({ smooth: true });
 
+    function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf);
+
+    const scrollMarginTop = 90;
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const targetPosition = target.getBoundingClientRect().top + window.scrollY - scrollMarginTop;
+                lenis.scrollTo(targetPosition, {
+                    duration: 1.5, // vrijeme animacije
+                    easing: (t) => 1 - Math.pow(1 - t, 3), // prilagođeni easing
+                });
+            }
+        });
+    });
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    // ----------------------------------------------------------------
+    // SCROLL
+    // ----------------------------------------------------------------¸
+
+    const scrollUpButton = document.querySelector(".scroll-up");
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 1000) {
+            // Show the icon when the scroll position is greater than 1000px
+            scrollUpButton.classList.add('show');
+        } else {
+            // Hide the icon when the scroll position is less than 1000px
+            scrollUpButton.classList.remove('show');
+        }
+    });
+    // ----------------------------------------------------------------
     // FORM
-
     // ----------------------------------------------------------------
+    // nav bar item selection when scrolling
+
+    const navItems = document.querySelectorAll('#main-navigation li');
+    const sections = ['#intro', '#about-me', '#gallery', '#web-solutions', '#contact'];
+
+    sections.forEach((sectionSelector, index) => {
+        ScrollTrigger.create({
+            trigger: sectionSelector,
+            start: "top center",
+            end: "bottom center",
+            onEnter: () => {
+                navItems.forEach(item => item.setAttribute('aria-selected', 'false'));
+                navItems[index].setAttribute('aria-selected', 'true');
+            },
+            onEnterBack: () => {
+                navItems.forEach(item => item.setAttribute('aria-selected', 'false'));
+                navItems[index].setAttribute('aria-selected', 'true');
+            },
+        });
+    });
 
     document.querySelectorAll('.js-input').forEach(input => {
-        input.addEventListener('keyup', function() {
+        input.addEventListener('keyup', function () {
             if (this.value) {
                 this.classList.add('not-empty');
             } else {
@@ -53,48 +106,72 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         });
     });
-    
+
     // Select the form
     const form = document.querySelector(".contact-form");
-  
+
     // Select individual fields
     const checkboxes = form.querySelectorAll("input[type='checkbox']");
     const nameInput = form.querySelector("#name");
     const emailInput = form.querySelector("#email");
     const messageInput = form.querySelector("#message");
-  
+
     // Log form elements on submit
-    form.addEventListener("submit", (event) => {
-      event.preventDefault(); // Prevent form submission for demo purposes
-  
-      // Get checked checkbox values
-      const selectedServices = Array.from(checkboxes)
-        .filter((checkbox) => checkbox.checked)
-        .map((checkbox) => checkbox.value);
-  
-      // Log form values
-      console.log("Name:", nameInput.value);
-      console.log("Email:", emailInput.value);
-      console.log("Message:", messageInput.value);
-      console.log("Selected Services:", selectedServices);
-      alert("Hej! Ova funkcionalnost još ne radi molim te javi mi se direktno na email.");
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault(); // Prevent form submission for demo purposes
+
+        // Get checked checkbox values
+        const selectedServices = Array.from(checkboxes)
+            .filter((checkbox) => checkbox.checked)
+            .map((checkbox) => checkbox.value);
+
+        // Log form values
+        console.log("Name:", nameInput.value);
+        console.log("Email:", emailInput.value);
+        console.log("Message:", messageInput.value);
+        console.log("Selected Services:", selectedServices);
+
+        const formData = {
+            name: nameInput.value,
+            email: emailInput.value,
+            message: `Odabrane usluge:  ${selectedServices}\n  ${messageInput.value}`,
+        };
+    
+        try {
+            const response = await fetch('https://mail-servce.onrender.com/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+    
+            const result = await response.json();
+            if (response.ok) {
+                alert('Hvala na javljanju! Biti ćete kontaktirani u najkraćem mogućem roku.');
+            } else {
+                alert('Neuspješno slanje, molim Vas javite se direktno na mail.');
+            }
+        } catch (error) {
+            alert('Neuspješno slanje, molim Vas javite se direktno na mail.');
+        }
     });
 
     const lazyImages = document.querySelectorAll("img[data-src]");
-  
+
     const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.removeAttribute("data-src");
-          observer.unobserve(img);
-        }
-      });
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute("data-src");
+                observer.unobserve(img);
+            }
+        });
     });
-  
+
     lazyImages.forEach(image => {
-      imageObserver.observe(image);
+        imageObserver.observe(image);
     });
 
     // ----------------------------------------------------------------
@@ -102,8 +179,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // ANIMATIONS
 
     // ----------------------------------------------------------------
-
-    gsap.registerPlugin(ScrollTrigger)
 
 
     const splitTypes = document.querySelectorAll('.falling-text-animation')

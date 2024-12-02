@@ -71,6 +71,7 @@ html {
     text-size-adjust: none;
 }
 
+
 /* Remove default margin in favour of better control in authored CSS */
 body,
 h1,
@@ -186,6 +187,10 @@ textarea:not([rows]) {
     display: flex;
     flex-direction: var(--flex-direction, row);
     gap: var(--gap, 1rem);
+}
+
+.justify-center {
+    justify-content: center;
 }
 
 .d-block {
@@ -396,12 +401,24 @@ textarea:not([rows]) {
 
 /* Sections */
 
+#contact, #web-solutions, #gallery {
+    scroll-margin-top: 5rem; 
+    scroll-behavior: smooth;
+}
+
 /* header */
 
 .main-navigation {
-    padding-inline: clamp(3rem, 8vw, 30rem);
-
     --gap: clamp(3rem, 5vw, 30rem);
+
+    position: fixed;
+    z-index: 250;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    padding-inline: clamp(3rem, 8vw, 30rem);
+    margin: 0;
+    background-color: hsl(var(--clr-dark));
 }
 
 .contact-nav {
@@ -411,22 +428,24 @@ textarea:not([rows]) {
     transition: background-color 250ms ease-in-out;
 }
 
-.contact-nav:hover {
+.main-navigation>* a:where(:not(.contact-nav)) {
+    padding: 1rem 0;
+}
+
+.contact-nav:hover,
+.main-navigation li:last-child[aria-selected="true"] a {
     background-color: hsl(var(--clr-white));
 }
 
 .main-navigation>*:last-child {
+    padding-top: 5px;
     margin-left: auto;
-}
-
-.main-navigation>* a:where(:not(.contact-nav)) {
-    padding: 1rem 0;
 }
 
 .main-navigation>*::after {
     display: block;
     width: 100%;
-    height: 1px;
+    height: 2px;
     margin-top: 0.5rem;
     content: '';
     background-color: hsl(var(--clr-white));
@@ -434,7 +453,8 @@ textarea:not([rows]) {
     transition: opacity 150ms ease-in-out;
 }
 
-.main-navigation>*:where(:not(:last-child)):hover {
+.main-navigation > *:where(:not(:last-child)):hover,
+.main-navigation > *:where(:not(:last-child))[aria-selected="true"] {
     --underline-visible: 1;
 }
 
@@ -505,6 +525,34 @@ textarea:not([rows]) {
 }
 
 /* Hero */
+
+.scroll-up {
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    z-index: 1000;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    background-image: url("../assets/icons/scroll-up.png");
+    filter: invert(100%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity:0;
+    transition: opacity 250ms ease-in-out;
+    transform: translateX(5rem);
+}
+
+.scroll-up.show {
+    display: block;
+    opacity: 0.5;
+    transform: translateX(0);
+}
+
+.scroll-up.show:hover {
+    opacity: 1;
+}
+
 
 .intro h1 {
     margin: 0;
@@ -751,13 +799,13 @@ textarea:not([rows]) {
 .gallery {
     position: relative;
     display: grid;
-    gap: 4rem;
     padding-inline: clamp(1.25rem, 7vw, 10rem);
     overflow: hidden;
   }
 
 .category  {
     width: 75%;
+    padding: 2rem;
     margin: 0 auto;
 }
 
@@ -952,6 +1000,10 @@ textarea:not([rows]) {
 
 /* stylelint-disable-next-line media-feature-range-notation */
 @media (min-width: 45em) {
+    .hero{
+        padding-top: 7rem;
+    }
+
     .grid-container--hero {
         grid-template-areas:
             'content image';
@@ -1006,12 +1058,12 @@ textarea:not([rows]) {
         margin: unset;
     }
 
-    .web-solutions >*:nth-child(odd) {
+    .web-solutions >*:not(:first-child):nth-child(odd) {
         display: flex;
         justify-content: start;
     }
     
-    .web-solutions >*:nth-child(even) {
+    .web-solutions >*:not(:first-child):nth-child(even) {
         display: flex;
         justify-content: end;
     }
@@ -1041,9 +1093,10 @@ textarea:not([rows]) {
   .contact .contact-title{
     position: relative;
     padding-bottom: 1rem;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
 
+/* 
   .contact .contact-title::after {
     position: absolute;
     bottom: -0.5rem;
@@ -1055,7 +1108,7 @@ textarea:not([rows]) {
     background-color: hsl(var(--clr-white));
     opacity: 0.4;
     
-  }
+  } */
 
   .contact .need-text {
     margin:1rem 0;
