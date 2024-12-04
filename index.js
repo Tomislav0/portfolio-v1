@@ -28,6 +28,7 @@ hamburgerButton.addEventListener('click', () => {
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
+
     const cursor = new MouseFollower({
         stateDetection: false,
         dataAttr: false
