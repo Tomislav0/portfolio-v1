@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         };
     
         try {
-            const response = await fetch('https://mail-servce.onrender.com/send-email', {
+            const response = await fetch('https://stopwatch.tomislavkovacevic.com/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
