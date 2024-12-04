@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         stateDetection: false,
         dataAttr: false
     });
-    
+
     const lenis = new Lenis({ smooth: true });
 
     function raf(time) {
@@ -107,7 +107,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     });
 
-    // Select the form
+    // ----------------------------------------------------------------
+    // FORM SUBMIT
+
     const form = document.querySelector(".contact-form");
 
     // Select individual fields
@@ -118,44 +120,45 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     // Log form elements on submit
     form.addEventListener("submit", async function (event) {
-        event.preventDefault(); // Prevent form submission for demo purposes
+        event.preventDefault();
 
-        // Get checked checkbox values
-        const selectedServices = Array.from(checkboxes)
-            .filter((checkbox) => checkbox.checked)
-            .map((checkbox) => checkbox.value);
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LeB6JEqAAAAAPCZqL8d_wd9TZObY4jyZ7bNZLAl', { action: 'submit' }).then(async function (token) {
 
-        // Log form values
-        console.log("Name:", nameInput.value);
-        console.log("Email:", emailInput.value);
-        console.log("Message:", messageInput.value);
-        console.log("Selected Services:", selectedServices);
+                const selectedServices = Array.from(checkboxes)
+                    .filter((checkbox) => checkbox.checked)
+                    .map((checkbox) => checkbox.value);
 
-        const formData = {
-            name: nameInput.value,
-            email: emailInput.value,
-            message: `Odabrane usluge:  ${selectedServices}\n  ${messageInput.value}`,
-        };
-    
-        try {
-            const response = await fetch('https://stopwatch.tomislavkovacevic.com/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
+                const formData = {
+                    name: nameInput.value,
+                    email: emailInput.value,
+                    message: `Odabrane usluge:  ${selectedServices}\n${messageInput.value}`,
+                    gRecaptchaResponse: token
+                };
+                try {
+                    const response = await fetch('https://stopwatch.tomislavkovacevic.com/send-email', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData),
+                    });
+
+                    const result = await response.json();
+                    if (response.ok) {
+                        alert('Hvala na javljanju! Biti ćete kontaktirani u najkraćem mogućem roku.');
+                    } else {
+                        alert('Neuspješno slanje, molim Vas javite se direktno na mail.');
+                    }
+                } catch (error) {
+                    alert('Neuspješno slanje, molim Vas javite se direktno na mail.');
+                }
             });
-    
-            const result = await response.json();
-            if (response.ok) {
-                alert('Hvala na javljanju! Biti ćete kontaktirani u najkraćem mogućem roku.');
-            } else {
-                alert('Neuspješno slanje, molim Vas javite se direktno na mail.');
-            }
-        } catch (error) {
-            alert('Neuspješno slanje, molim Vas javite se direktno na mail.');
-        }
+
+        });
     });
+
+    // ----------------------------------------------------------------
 
     const lazyImages = document.querySelectorAll("img[data-src]");
 
