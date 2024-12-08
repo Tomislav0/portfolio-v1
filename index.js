@@ -25,14 +25,33 @@ hamburgerButton.addEventListener('click', () => {
 // ----------------------------------------------------------------
 
 
-
-
 document.addEventListener("DOMContentLoaded", (event) => {
 
     const cursor = new MouseFollower({
         stateDetection: false,
         dataAttr: false
     });
+
+    // ----------------------------------------------------------------
+    // SCROLL
+    // ----------------------------------------------------------------¸
+
+    const scrollUpButton = document.querySelector(".scroll-up");
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 1000) {
+            // Show the icon when the scroll position is greater than 1000px
+            scrollUpButton.classList.add('show');
+        } else {
+            // Hide the icon when the scroll position is less than 1000px
+            scrollUpButton.classList.remove('show');
+        }
+    });
+
+    const sections = ['#intro', '#about-me', '#gallery', '#web-solutions', '#contact'];
+    const uri = document.URL.split("/") 
+    // code below will only be executed on the first
+    if(!(uri[uri.length - 1] == "" || sections.includes(uri[uri.length-1]))) return;
+
 
     const lenis = new Lenis({ smooth: true });
 
@@ -58,29 +77,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     });
 
+
     gsap.registerPlugin(ScrollTrigger)
 
-    // ----------------------------------------------------------------
-    // SCROLL
-    // ----------------------------------------------------------------¸
 
-    const scrollUpButton = document.querySelector(".scroll-up");
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 1000) {
-            // Show the icon when the scroll position is greater than 1000px
-            scrollUpButton.classList.add('show');
-        } else {
-            // Hide the icon when the scroll position is less than 1000px
-            scrollUpButton.classList.remove('show');
-        }
-    });
     // ----------------------------------------------------------------
     // FORM
     // ----------------------------------------------------------------
     // nav bar item selection when scrolling
 
     const navItems = document.querySelectorAll('#main-navigation li');
-    const sections = ['#intro', '#about-me', '#gallery', '#web-solutions', '#contact'];
 
     sections.forEach((sectionSelector, index) => {
         ScrollTrigger.create({
@@ -113,15 +119,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const form = document.querySelector(".contact-form");
 
-    // Select individual fields
-    const checkboxes = form.querySelectorAll("input[type='checkbox']");
-    const nameInput = form.querySelector("#name");
-    const emailInput = form.querySelector("#email");
-    const messageInput = form.querySelector("#message");
-
     // Log form elements on submit
-    form.addEventListener("submit", async function (event) {
+    form?.addEventListener("submit", async function (event) {
         event.preventDefault();
+
+        // Select individual fields
+        const checkboxes = form.querySelectorAll("input[type='checkbox']");
+        const nameInput = form.querySelector("#name");
+        const emailInput = form.querySelector("#email");
+        const messageInput = form.querySelector("#message");
 
         grecaptcha.ready(function () {
             grecaptcha.execute('6LeB6JEqAAAAAPCZqL8d_wd9TZObY4jyZ7bNZLAl', { action: 'submit' }).then(async function (token) {
@@ -161,25 +167,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     // ----------------------------------------------------------------
 
-    const lazyImages = document.querySelectorAll("img[data-src]");
-
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute("data-src");
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    lazyImages.forEach(image => {
-        imageObserver.observe(image);
-    });
-
-    // ----------------------------------------------------------------
-
     // ANIMATIONS
 
     // ----------------------------------------------------------------
@@ -191,7 +178,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const text = new SplitType(element, { types: 'chars' });
 
         const animationSpeed = element.dataset.speed;
-        console.log(animationSpeed)
         let smth = gsap.from(text.chars, {
             scrollTrigger: {
                 trigger: element,
