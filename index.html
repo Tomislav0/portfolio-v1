@@ -39,18 +39,18 @@
                 aria-expanded="false"><span class="sr-only">Menu</span></button>
         </div>
         <nav>
-            <ul id="main-navigation" data-visible="false" class="main-navigation flex ff-outfit">
-                <li aria-selected="true"><a href="#intro" class="fs-100 text-white">Početna</a></li>
-                <li aria-selected="false"><a href="#about-me" class="fs-100 text-white">O meni</a></li>
-                <li aria-selected="false"><a href="#gallery" class="fs-100 text-white">Galerija</a></li>
-                <li aria-selected="false"><a href="#web-solutions" class="fs-100 text-white">Web rješenja</a></li>
-                <li aria-selected="false"><a href="#contact" class="contact-nav fs-100 text-dark">Kontaktiraj me</a>
+            <ul id="main-navigation" data-visible="false" class="main-navigation flex ff-outfit" role="tablist">
+                <li role="tab" aria-selected="true"  tabindex="0"><a href="#intro" class="fs-100 text-white">Početna</a></li>
+                <li role="tab" aria-selected="false" tabindex="-1"><a href="#about-me" class="fs-100 text-white">O meni</a></li>
+                <li role="tab" aria-selected="false" tabindex="-1"><a href="#gallery" class="fs-100 text-white">Galerija</a></li>
+                <li role="tab" aria-selected="false" tabindex="-1"><a href="#web-solutions" class="fs-100 text-white">Web rješenja</a></li>
+                <li role="tab" aria-selected="false" tabindex="-1"><a href="#contact" class="contact-nav fs-100 text-dark">Kontaktiraj me</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <section id="intro" class="hero grid-container grid-container--hero">
+    <section id="intro" class="hero grid-container grid-container--hero" role="tabpanel">
         <div class="intro">
             <div>
                 <h1 class="reveal-type ff-outfit fs-1000 fw-300 appearing-animation"><span class="uppercase">
@@ -129,7 +129,7 @@
         </div>
     </section>
 
-    <section id="about-me" class="about-me">
+    <section id="about-me" class="about-me" role="tabpanel">
         <div class="about-me-title left-slide-animation">
             <h2 class="fs-400 text-blue letter-spacing-2 ">O meni</h2>
             <p class="fs-700">Dostavljam rezultate iznad Vaših očekivanja.</p>
@@ -171,7 +171,7 @@
             <span class="break"> važne <span class="text-yellow">trenutke</span>.</span>
         </p>
     </div>
-    <section id="gallery">
+    <section id="gallery" role="tabpanel">
         <div class="flex justify-center">
             <h2 class="text-center fs-500 fw-100 letter-spacing-2">Galerije fotografija</h2>
         </div>
@@ -224,13 +224,13 @@
     </div>
 
 
-    <section id="web-solutions">
-        <div class="web-solutions" role="list">
+    <section id="web-solutions" role="tabpanel">
+        <div class="web-solutions">
             <div class="flex justify-center">
                 <h2 class="text-center fs-500 fw-100 letter-spacing-2">Koraci do unaprjeđenja vašeg poslovanja - <b>web
                         rješenje/stranica</b></h2>
             </div>
-            <div class="left-slide-animation" role="listitem">
+            <div class="left-slide-animation">
                 <div class="web-steps">
                     <div class="step-title flex">
                         <span class="text-blue fs-900 fw-100 letter-spacing-2" aria-hidden="true">01</span>
@@ -245,7 +245,7 @@
                 </div>
 
             </div>
-            <div class="right-slide-animation" role="listitem">
+            <div class="right-slide-animation">
                 <div class="web-steps">
                     <div class="step-title flex">
                         <span class="text-blue fs-900 fw-100 letter-spacing-2" aria-hidden="true">02</span>
@@ -261,7 +261,7 @@
                 </div>
             </div>
 
-            <div class="left-slide-animation" role="listitem">
+            <div class="left-slide-animation">
                 <div class="web-steps ">
                     <div class="step-title flex">
                         <span class="text-blue fs-900 fw-100 letter-spacing-2" aria-hidden="true">03</span>
@@ -275,7 +275,7 @@
                 </div>
             </div>
 
-            <div class="right-slide-animation" role="listitem">
+            <div class="right-slide-animation">
                 <div class="web-steps">
                     <div class="step-title flex">
                         <span class="text-blue fs-900 fw-100 letter-spacing-2" aria-hidden="true">04</span>
@@ -290,7 +290,7 @@
                     </p>
                 </div>
             </div>
-            <div class="left-slide-animation" role="listitem">
+            <div class="left-slide-animation">
                 <div class="web-steps ">
                     <div class="step-title flex">
                         <span class="text-blue fs-900 fw-100 letter-spacing-2" aria-hidden="true">05</span>
@@ -329,7 +329,7 @@
             <span class="text-yellow">djelo</span>.
         </p>
     </div>
-    <section id="contact" class="contact ">
+    <section id="contact" class="contact" role="tabpanel">
         <div class="contact-title">
             <h3 class="text-center fs-500 fw-100 letter-spacing-3">Obrati mi se s povjerenjem.</h3>
         </div>
@@ -416,7 +416,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
     <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
     <script src="https://unpkg.com/split-type"></script> 
     <script src="https://www.google.com/recaptcha/api.js?render=6LeB6JEqAAAAAPCZqL8d_wd9TZObY4jyZ7bNZLAl"></script>
